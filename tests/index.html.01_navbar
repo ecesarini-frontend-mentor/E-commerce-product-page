@@ -20,19 +20,14 @@
 <body>
   <header>
       <ul id="navbar">
-        <!---<li class="nav-item nav-logo"></li>-->
-        <li class="nav-item nav-top">
-          <img src="images/logo.svg" alt="site logo">
-          <span>Collections</span>
-          <span>Men</span>
-          <span>Women</span>
-          <span>About</span>
-          <span>Contact</span>          
-        </li>
-        <li class="nav-item nav-tail">
-          <img class="nav-tail-cart" src="images/icon-cart.svg" alt="navbar cart">
-          <img class="nav-tail-avatar" src="images/image-avatar.png" alt="navbar avatar">
-        </li>
+        <li class="nav-item nav-logo"><img src="images/logo.svg" alt="site logo"></li>
+        <li class="nav-item nav-link">Collections</li>
+        <li class="nav-item nav-link">Men</li>
+        <li class="nav-item nav-link">Women</li>
+        <li class="nav-item nav-link">About</li>
+        <li class="nav-item nav-link">Contact</li>
+        <li class="nav-item nav-cart"><img src="images/icon-cart.svg" alt="cart"></li>
+        <li class="nav-item nav-avatar"><img src="images/image-avatar.png" alt="avatar"></li>
       </ul>
       <hr class="navbar-hr">
   </header>
