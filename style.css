@@ -19,10 +19,6 @@ footer.attribution a { color: hsl(228, 45%, 44%); }
     --img-width: 80%;
 }
 
-html {
-    box-sizing: content-box;
-}
-
 ul {
     list-style: none;
     padding: 0;
@@ -39,6 +35,7 @@ button {
 
 
 body {
+    box-sizing: content-box;
     max-width: 1440px;
     width: 1440px;
     margin: 4% 12% 0 12%;
@@ -117,9 +114,11 @@ main {
     display: flex;
     justify-content: space-between;
 }
-#image-side .product-thumb > img {
-    width: 20%;
-    margin: 30px 1%;
+#image-side .product-thumb .tmb-btn {
+    margin: 20px 0;
+}
+#image-side .product-thumb .tmb-btn img {
+    width: 90%;
     border-radius: 5px;
 }
 
