@@ -19,6 +19,10 @@ footer.attribution a { color: hsl(228, 45%, 44%); }
     --img-width: 80%;
 }
 
+html {
+    box-sizing: content-box;
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -55,7 +59,7 @@ main {
     align-items: center;
 }
 .nav-top {
-    display: flex;
+    display: inline-flex;
     justify-content: space-evenly;
 }
 .nav-top img {
@@ -71,7 +75,7 @@ main {
 }
 
 .nav-tail {
-    display: flex;
+    display: inline-flex;
     justify-content: space-around;
     align-items: center;
 }
@@ -121,6 +125,7 @@ main {
 
 #desc-side {
     width: 50%;
+    margin: 7% 0;
     display: flex;
     flex-direction: column;
 }
@@ -135,21 +140,23 @@ main {
     color: var(--black);
     font-weight: 700;
     font-size: 3em;
-    margin: 0;
+    margin: 3% 0 5% 0;
 }
 .desc-par {
+    margin-bottom: 7%;
     color: var(--dark-grayish-blue);
     font-size: 1.2em;
     font-weight: 500;
 }
 .desc-price {
     display: inline-flex;
+    margin-bottom: 3%;
 }
 .desc-price .desc-price-current {
     color: var(--black);
     font-size: 2.3em;
     font-weight: 600;
-    margin-right: 20px;
+    margin-right: 25px;
 }
 .desc-price .desc-price-discount {
     margin: auto 0;
@@ -161,18 +168,24 @@ main {
     border-radius: 5px;
 }
 .desc-price-old {
+    margin-bottom: 7%;
     color: var(--grayish-blue);
     font-size: 1.2em;
     font-weight: 600;
     text-decoration: line-through;
 }
 .desc-purchase-container {
+    width: 100%;
     display: flex;
 }
+.desc-purchase-container > div {
+    height: 3em;
+}
 .desc-purchase-selection {
-    width: 20%;
+    margin-right: 30px;
     display: flex;
-    background-color: var(--grayish-blue);
+    flex-basis: 30%;
+    background-color: var(--light-grayish-blue);
     justify-content: space-around;
     border-radius: 7px;
 }
@@ -187,13 +200,25 @@ main {
 }
 .desc-purchase-add-cart {
     width: 30%;
+    display: inline-flex;
+    flex-basis: 50%;
+    justify-content: center;
     color: var(--white);
     background-color: var(--orange);
     font-weight: 600;
-    display: flex;
-    justify-content: space-evenly;
     border-radius: 7px;
+    box-shadow: 0px 10px 27px -5px var(--orange);
 }
 .desc-purchase-add-cart img {
     color: var(--white);
+    width: 8%;
+    height: 43%;
+    margin: auto 0;
+}
+
+.desc-purchase-count {
+    margin: auto 0;
+}
+.desc-purchase-add-cart span {
+    margin: auto 0 auto 10px;
 }
