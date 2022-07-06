@@ -115,10 +115,18 @@ main {
     justify-content: space-between;
 }
 #image-side .product-thumb .tmb-btn {
-    margin: 20px 0;
+    margin: 20px 7px;
+    border-radius: 5px;
+}
+#image-side .product-thumb .tmb-btn:focus {
+    opacity: 0.7;
+    border: 5px solid var(--orange);
+    border-radius: 5px;
+    background-color: var(--orange);
 }
 #image-side .product-thumb .tmb-btn img {
-    width: 90%;
+    width: 100%;
+    height: 100%;
     border-radius: 5px;
 }
 
@@ -220,4 +228,16 @@ main {
 }
 .desc-purchase-add-cart span {
     margin: auto 0 auto 10px;
+}
+
+
+/*MODAL*/
+.modal {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+}
+.modal-container {
+    osition: fixed;
+    z-index: 1;
 }

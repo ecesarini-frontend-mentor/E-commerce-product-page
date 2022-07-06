@@ -1,0 +1,62 @@
+export class GalTools {
+    constructor() {}
+
+    modalCreator(mainImg) {
+        const modal = document.createElement('div'),
+            modalContainer = document.createElement('div'),
+            modalCloseBtn = document.createElement('button'),
+            modalCloseImg  = document.createElement('img'),
+            modalTopContainer = document.createElement('div'),
+            modalTopMainImg = document.createElement('img'),
+            modalTopBtnPrev = document.createElement('button'),
+            modalTopBtnPrevImg = document.createElement('img'),
+            modalTopBtnNext = document.createElement('button'),
+            modalTopBtnNextImg = document.createElement('img'),
+            modalBottomContainer = document.createElement('div'),
+            modalBottomThumbBtn1 = document.createElement('button'),
+            modalBottomThumbImg1 = document.createElement('img'),
+            modalBottomThumbBtn2 = document.createElement('button'),
+            modalBottomThumbImg2 = document.createElement('img'),
+            modalBottomThumbBtn3 = document.createElement('button'),
+            modalBottomThumbImg3 = document.createElement('img'),
+            modalBottomThumbBtn4 = document.createElement('button'),
+            modalBottomThumbImg4 = document.createElement('img');
+
+        modal.classList.add('modal');
+        modalContainer.classList.add('modal-container');
+        modalCloseBtn.classList.add('modal-close-button');
+        modalTopContainer.classList.add('modal-top-container');
+        modalTopMainImg.classList.add('modal-top-main-img');
+        modalTopBtnPrev.classList.add('modal-top-btn');
+        modalTopBtnNext.classList.add('modal-top-btn');
+        modalBottomContainer.classList.add('modal-bottom-container');
+        modalBottomThumbBtn1.classList.add('modal-bottom-thumb-button');
+        modalBottomThumbBtn2.classList.add('modal-bottom-thumb-button');
+        modalBottomThumbBtn3.classList.add('modal-bottom-thumb-button');
+        modalBottomThumbBtn4.classList.add('modal-bottom-thumb-button');
+
+        modalCloseImg.setAttribute('src', './images/icon-close.svg');
+        modalTopMainImg.setAttribute('src', mainImg.src);
+        modalTopBtnPrevImg.setAttribute('src', 'images/icon-previous.svg');
+        modalTopBtnNextImg.setAttribute('src', 'images/icon-next.svg');
+        modalBottomThumbImg1.setAttribute('src', 'images/image-product-1-thumbnail.jpg');
+        modalBottomThumbImg2.setAttribute('src', 'images/image-product-2-thumbnail.jpg');
+        modalBottomThumbImg3.setAttribute('src', 'images/image-product-3-thumbnail.jpg');
+        modalBottomThumbImg4.setAttribute('src', 'images/image-product-4-thumbnail.jpg');
+
+        modalCloseBtn.append(modalCloseImg);
+        modalTopBtnPrev.append(modalTopBtnPrevImg);
+        modalTopBtnNext.append(modalTopBtnNextImg);
+        modalTopContainer.append(modalTopBtnPrev, modalTopMainImg, modalTopBtnNext);
+        modalBottomThumbBtn1.append(modalBottomThumbImg1);
+        modalBottomThumbBtn2.append(modalBottomThumbImg2);
+        modalBottomThumbBtn3.append(modalBottomThumbImg3);
+        modalBottomThumbBtn4.append(modalBottomThumbImg4);
+        modalBottomContainer.append(modalBottomThumbBtn1, modalBottomThumbBtn2, modalBottomThumbBtn3, modalBottomThumbBtn4);
+
+        modalContainer.append(modalCloseBtn, modalTopContainer, modalBottomContainer);
+        modal.append(modalContainer);
+
+        return modal;
+    }    
+}
