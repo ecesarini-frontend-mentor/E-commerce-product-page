@@ -28,11 +28,10 @@ export class Gal extends GalTools {
     }
     modalOn() {
         let modal = this.modalCreator(this.modalClk.querySelector('img'));
-        modal.style.display = 'block';
-        this.mainContainer.style.position = 'relative';
         this.mainContainer.append(modal);
+        modal.style.display = 'block';
 
-        debugger;
+        //debugger;
     }
 
     thumbSel(ect) {
