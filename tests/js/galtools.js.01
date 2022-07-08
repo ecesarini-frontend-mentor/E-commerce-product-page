@@ -27,15 +27,15 @@ export class GalTools {
         modalCloseBtn.classList.add('modal-close-button');
         modalTopContainer.classList.add('modal-top-container');
         modalTopMainImg.classList.add('modal-top-main-img');
-        modalTopBtnPrev.classList.add('modal-top-btn', 'modal-top-btn-previous');
-        modalTopBtnNext.classList.add('modal-top-btn', 'modal-top-btn-next');
+        modalTopBtnPrev.classList.add('modal-top-btn');
+        modalTopBtnNext.classList.add('modal-top-btn');
         modalBottomContainer.classList.add('modal-bottom-container');
         modalBottomThumbBtn1.classList.add('modal-bottom-thumb-button');
         modalBottomThumbBtn2.classList.add('modal-bottom-thumb-button');
         modalBottomThumbBtn3.classList.add('modal-bottom-thumb-button');
         modalBottomThumbBtn4.classList.add('modal-bottom-thumb-button');
 
-        modalCloseImg.setAttribute('src', './images/icon-close-modal.svg');
+        modalCloseImg.setAttribute('src', './images/icon-close.svg');
         modalTopMainImg.setAttribute('src', mainImg.src);
         modalTopBtnPrevImg.setAttribute('src', 'images/icon-previous.svg');
         modalTopBtnNextImg.setAttribute('src', 'images/icon-next.svg');

@@ -241,9 +241,60 @@ main {
     z-index: 1;
     left: 0;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 .modal-container {
     position: relative;
+    max-width: 40rem;
+    width: 40rem;
     z-index: 1;
+    margin: 20px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal-close-button {
+    align-self: flex-end;
+    margin: 0 3px 3px 0;
+}
+.modal-close-button img {
+    width: 25px;
+}
+.modal-top-container {
+    position: relative;
+}
+.modal-top-main-img {
+    width: 40rem;
+    border-radius: 20px;
+}
+.modal-top-btn {
+    position: absolute;
+    bottom: 50%;
+    width: 70px;
+    height: 70px;
+    background-color: var(--white);
+    border-radius: 50%;
+}
+.modal-top-btn-previous {
+    left: -5%;
+}
+.modal-top-btn-next {
+    right: -5%;
+}
+.modal-bottom-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+/*.modal-bottom-thumb-button:focus {
+    opacity: 0.2;
+    border: 3px solid var(--orange);
+}
+.modal-bottom-thumb-button:hover {
+    opacity: 0.5;
+}*/
+
+.modal-bottom-thumb-button img {
+    width: 80%;
+    border-radius: 10px;
 }
