@@ -44,28 +44,20 @@ export class Gal extends GalTools {
     
     }
     modalSliderTopBtn(ect) {
-        const reg = /-(\d)/;
-        let mainImg;
-        const matcher = (order) => {
-            const regMatch = mainImg.src.match(reg);
-            let r = Number.parseInt(regMatch[1]),
-                repl;
-            if(order === 'previous') {
-                repl = (r === 1)? '-4': `-${--r}`;
-            }    
-            else if(order === 'next') {
-                repl = (r === 4)? '-1': `-${++r}`;
+        /*const mainImg = (ect) => {
+            const ris = null;
+            if (ect.matches('.modal-top-btn-previous')) {
+                debugger;
             }
-            mainImg.src = mainImg.src.replace(regMatch[0], repl);
-        }
-        
+            else if(ect.matches('.modal-top-btn-next')) {
+                debugger;
+            }
+        }*/
         if (ect.matches('.modal-top-btn-previous')) {
-            mainImg = ect.nextElementSibling;
-            matcher('previous');
+            debugger;
         }
         else if(ect.matches('.modal-top-btn-next')) {
-            mainImg = ect.previousElementSibling;
-            matcher('next');
+            debugger;
         }
         
     }
