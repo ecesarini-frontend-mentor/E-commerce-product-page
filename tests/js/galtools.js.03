@@ -1,7 +1,7 @@
 export class GalTools {
     constructor() {}
 
-    modalShowCreator(mainImg) {
+    modalCreator(mainImg) {
         const modal = document.createElement('div'),
             modalContainer = document.createElement('div'),
             modalCloseBtn = document.createElement('button'),
@@ -58,44 +58,5 @@ export class GalTools {
         modal.append(modalContainer);
 
         return modal;
-    }
-
-    popCartCreator() {
-        const popCartCreated  = document.createElement('div'), 
-            popCartContainer = document.createElement('div'),
-            popCartHead = document.createElement('div'),
-            popCartItems = document.createElement('div'),
-            popCartItemsImg = document.createElement('img'),
-            popCartItemsDetails = document.createElement('div'),
-            popCartItemsDetailsProd1Row = document.createElement('div'),
-            popCartItemsDetailsProd2Row = document.createElement('div'),
-            popCartItemsDetailsProd2RowPrice = document.createElement('span'),
-            popCartItemsDetailsProd2RowCount = document.createElement('span'),
-            popCartItemsDetailsProd2RowTotal = document.createElement('span'),
-            popCartItemsDetailsIconBtn = document.createElement('button'),
-            popCartItemsDetailsIconImg = document.createElement('img'),
-            popCartTail = document.createElement('button');
-
-        popCartCreated.classList.add('.pop-cart-created');
-        popCartContainer.classList.add('pop-cart-container');
-        popCartHead.classList.add('pop-cart-head');
-        popCartItems.classList.add('pop-cart-items');
-        popCartItemsDetails.classList.add('pop-cart-items-details');
-        popCartItemsDetailsProd1Row.classList.add('pop-cart-items-details-prod-1row');
-        popCartItemsDetailsProd2Row.classList.add('pop-cart-items-details-prod-2row');
-        popCartItemsDetailsIconBtn.classList.add('pop-cart-items-details-icon-btn');
-        popCartItemsDetailsIconImg.setAttribute('src', 'images/icon-delete.svg');
-        popCartItemsDetailsIconImg.setAttribute('alt', 'Delete from chart');
-        popCartTail.classList.add('pop-cart-tail');
-
-        popCartItemsDetailsProd2Row.append(popCartItemsDetailsProd2RowPrice, popCartItemsDetailsProd2RowCount, popCartItemsDetailsProd2RowTotal);
-        popCartItemsDetails.append(popCartItemsDetailsProd1Row, popCartItemsDetailsProd2Row);
-        popCartItemsDetailsIconBtn.append(popCartItemsDetailsIconImg);
-        popCartItems.append(popCartItemsImg, popCartItemsDetails, popCartItemsDetailsIconBtn);
-        popCartContainer.append(popCartHead, popCartItems, popCartTail);
-        popCartCreated.append(popCartContainer);
-
-        return popCartCreated;
-    }
-
+    }    
 }

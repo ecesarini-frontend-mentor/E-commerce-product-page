@@ -5,33 +5,24 @@ export class Gal extends GalTools {
         super();
         this.mainContainer = document.querySelector('main');
         this.modalOnClk = document.querySelector('.product-sel');
-        this.cartCount = 0;
+        this.tmbClk = document.querySelectorAll('#image-side .tmb-btn');
         this.modalBtnClk = null;
         this.eventsListener();
     }
     eventsListener() {
-        let btn = document.querySelectorAll('button');
         this.modalOnClk.addEventListener('click', this);
-        //this.tmbClk.forEach(t => t.addEventListener('click', this));
-        btn.forEach(b => b.addEventListener('click', this));
+        this.tmbClk.forEach(t => t.addEventListener('click', this));
         if(this.modalBtnClk) {
             this.modalBtnClk.forEach(m => m.addEventListener('click', this));
         }
     }
     handleEvent(e) {
         const ect = e.currentTarget;
-        let selTg = undefined;
-            //addToCart = 0;
-
-        function cartChecker() {
-
-        }
 
         switch(e.type) {
             case 'click':
                 if(ect.matches('.tmb-btn')) {
-                    selTg = '.product-sel img';
-                    this.thumbSel(ect, selTg);
+                    this.thumbSel(ect);
                 }
                 if(ect.matches('.product-sel')) {
                     this.modalOn();
@@ -42,38 +33,15 @@ export class Gal extends GalTools {
                 if(ect.matches('.modal-top-btn')) {
                     this.modalSliderTopBtn(ect);
                 }
-                if(ect.matches('.modal-bottom-thumb-button')) {
-                    selTg = '.modal-top-main-img';
-                    this.thumbSel(ect, selTg);
-                }
-                if(ect.matches('.desc-purchase-addremove')) {
-                    this.purchaseSel(ect);
-                }
-                if(ect.matches('.desc-purchase-add-cart')) {
-                    this.addToCart();
-                }
                 break;
         }
     }
     
-    thumbSel(ect, selTg) {
-        let imgMain = document.querySelector(selTg),
+    thumbSel(ect) {
+        let imgMain = document.querySelector('.product-sel img'),
             newImgSrc = ect.querySelector('img').src.replace('-thumbnail', '');
         imgMain.src = newImgSrc;
     
-    }
-    modalOn() {
-        let modal = this.modalShowCreator(this.modalOnClk.querySelector('img'));
-        this.mainContainer.append(modal);
-        modal.style.display = 'block';
-        this.modalBtnClk = document.querySelectorAll('.modal-container button');
-        this.eventsListener();
-    }
-    modalOff() {
-        //modal.style.display = 'none';
-        document.querySelector('.modal').remove();
-        this.modalBtnClk = null;
-        this.eventsListener();
     }
     modalSliderTopBtn(ect) {
         const reg = /-(\d)/;
@@ -99,23 +67,19 @@ export class Gal extends GalTools {
             mainImg = ect.previousElementSibling;
             matcher('next');
         }
-    }
-    purchaseSel(ect) {
-        const count = document.querySelector('.desc-purchase-count');
-
-        if(ect.matches('.desc-purchase-plus')) {
-            count.innerText = Number.parseInt(count.innerText) + 1;
-        }
-        else if(ect.matches('.desc-purchase-minus')) {
-            count.innerText = (Number.parseInt(count.innerText) > 0)? Number.parseInt(count.innerText) -1: 0;
-        }    
-        this.cartCount = Number.parseInt(count.innerText);
         
     }
-
-    addToCart() {
-        let purchCount = (this.cartCount > 0)? this.cartCount: 1;
-
-        document.querySelector('#navbar').append(this.popCartCreator());
+    modalOn() {
+        let modal = this.modalCreator(this.modalOnClk.querySelector('img'));
+        this.mainContainer.append(modal);
+        modal.style.display = 'block';
+        this.modalBtnClk = document.querySelectorAll('.modal-container button');
+        this.eventsListener();
+    }
+    modalOff() {
+        //modal.style.display = 'none';
+        document.querySelector('.modal').remove();
+        this.modalBtnClk = null;
+        this.eventsListener();
     }
 }
