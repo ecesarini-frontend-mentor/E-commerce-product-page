@@ -60,37 +60,10 @@ export class GalTools {
         return modal;
     }
 
-    popCartCreate() {
+    popCartCreator() {
         const popCartCreated  = document.createElement('div'), 
             popCartContainer = document.createElement('div'),
             popCartHead = document.createElement('div'),
-            popCartHr = document.createElement('hr'),
-            popCartContent = document.createElement('div'),
-            popCartIsEmpty = document.createElement('p');
-
-        popCartCreated.classList.add('pop-cart-created');
-        popCartContainer.classList.add('pop-cart-container');
-        popCartHead.classList.add('pop-cart-head');
-        popCartHr.classList.add('pop-cart-hr');
-        popCartContent.classList.add('pop-cart-content');
-        popCartIsEmpty.classList.add('pop-cart-is-empty');
-        
-        popCartHead.innerText = 'Cart';
-        popCartIsEmpty.innerText = 'Your cart is empty.';
-
-        popCartContent.append(popCartIsEmpty);
-        popCartContainer.append(popCartHead, popCartHr, popCartContent);
-        popCartCreated.append(popCartContainer);
-
-        return popCartCreated;
-
-    }
-
-    popCartPopulate(purchCount) {
-        const descH = document.querySelector('.desc-h').innerText,
-            descPC = Number.parseInt(document.querySelector('.desc-price-current').innerText);
-
-        const popCartItemsContainer = document.createElement('div'), 
             popCartItems = document.createElement('div'),
             popCartItemsImg = document.createElement('img'),
             popCartItemsDetails = document.createElement('div'),
@@ -103,7 +76,9 @@ export class GalTools {
             popCartItemsDetailsIconImg = document.createElement('img'),
             popCartTail = document.createElement('button');
 
-        popCartItemsContainer.classList.add('pop-cart-items-container');
+        popCartCreated.classList.add('.pop-cart-created');
+        popCartContainer.classList.add('pop-cart-container');
+        popCartHead.classList.add('pop-cart-head');
         popCartItems.classList.add('pop-cart-items');
         popCartItemsDetails.classList.add('pop-cart-items-details');
         popCartItemsDetailsProd1Row.classList.add('pop-cart-items-details-prod-1row');
@@ -113,19 +88,14 @@ export class GalTools {
         popCartItemsDetailsIconImg.setAttribute('alt', 'Delete from chart');
         popCartTail.classList.add('pop-cart-tail');
 
-        popCartItemsImg.src = document.querySelector('.tmb-btn img').src;
-        popCartItemsImg.alt = 'Product on cart';
-        popCartItemsDetailsProd1Row.innerText = descH;
-        popCartItemsDetailsProd2RowPrice.innerText = descPC;
-        popCartItemsDetailsProd2RowCount.innerText = descPC * purchCount;
-
         popCartItemsDetailsProd2Row.append(popCartItemsDetailsProd2RowPrice, popCartItemsDetailsProd2RowCount, popCartItemsDetailsProd2RowTotal);
         popCartItemsDetails.append(popCartItemsDetailsProd1Row, popCartItemsDetailsProd2Row);
         popCartItemsDetailsIconBtn.append(popCartItemsDetailsIconImg);
         popCartItems.append(popCartItemsImg, popCartItemsDetails, popCartItemsDetailsIconBtn);
-        popCartItemsContainer.append(popCartItems, popCartTail);
+        popCartContainer.append(popCartHead, popCartItems, popCartTail);
+        popCartCreated.append(popCartContainer);
 
-        return popCartItemsContainer;
+        return popCartCreated;
     }
 
 }

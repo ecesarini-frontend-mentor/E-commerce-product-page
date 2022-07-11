@@ -34,9 +34,6 @@ button {
 	outline: inherit;
 }
 
-/*header {
-    position: relative;
-}*/
 
 body {
     box-sizing: content-box;
@@ -50,6 +47,7 @@ body {
 main {
     width: 100%;
     position: relative;
+    /*margin: auto;*/
 }
 
 
@@ -315,43 +313,15 @@ main {
 /* Cart popup on click */
 .pop-cart-created {
     display: none;
-    position: absolute;
-    z-index: 1;
-    top: 120%;
-    right: 0%;
-    width: 25%;
 }
 .pop-cart-container {
-    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
     align-content: center;
-    background-color: var(--white);
-    border-radius: 7px;
-    box-shadow: 2px 5px 9px -2px var(--dark-grayish-blue);
-}
-.pop-cart-head {
-    margin: 10px 0 30px 30px;
-    font-size: 1.2rem;
-    font-weight: 800;
-}
-.pop-cart-hr {
-    width: 98%;
-    border: 1px solid var(--grayish-blue);
-}
-.pop-cart-is-empty {
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: var(--dark-grayish-blue);
-    text-align: center;
-}
-.pop-cart-items-container {
-    display: flex;
-    flex-direction: column;
 }
 .pop-cart-items {
     display: flex;
+    flex-direction: column;
 }
 .pop-cart-items-display-prod-2nd-row {
     display: flex;

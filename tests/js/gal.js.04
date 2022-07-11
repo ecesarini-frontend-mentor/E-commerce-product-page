@@ -7,14 +7,12 @@ export class Gal extends GalTools {
         this.modalOnClk = document.querySelector('.product-sel');
         this.cartCount = 0;
         this.modalBtnClk = null;
-        this.cartIsClicked = false;
         this.eventsListener();
     }
     eventsListener() {
         let btn = document.querySelectorAll('button');
-        
-        window.addEventListener('load', this);
         this.modalOnClk.addEventListener('click', this);
+        //this.tmbClk.forEach(t => t.addEventListener('click', this));
         btn.forEach(b => b.addEventListener('click', this));
         if(this.modalBtnClk) {
             this.modalBtnClk.forEach(m => m.addEventListener('click', this));
@@ -51,23 +49,13 @@ export class Gal extends GalTools {
                 if(ect.matches('.desc-purchase-addremove')) {
                     this.purchaseSel(ect);
                 }
-                if(ect.matches('.nav-btn-cart')) {
-                    this.cartToggle();
-                }
                 if(ect.matches('.desc-purchase-add-cart')) {
-                    this.cartAddItems();
+                    this.addToCart();
                 }
-                break;
-            case 'load':
-                this.createCart();
                 break;
         }
     }
     
-    createCart() {
-        document.querySelector('#navbar').append(this.popCartCreate());
-    }
-
     thumbSel(ect, selTg) {
         let imgMain = document.querySelector(selTg),
             newImgSrc = ect.querySelector('img').src.replace('-thumbnail', '');
@@ -125,18 +113,9 @@ export class Gal extends GalTools {
         
     }
 
-    cartToggle() {        
-        document.querySelector('.pop-cart-created').style.display = 
-            (!this.cartIsClicked)? 'block' : '';
-
-        this.cartIsClicked = !this.cartIsClicked;
-    }
-
-    cartAddItems() {
+    addToCart() {
         let purchCount = (this.cartCount > 0)? this.cartCount: 1;
-        const cartItemCont = this.popCartPopulate(purchCount);
 
-        document.querySelector('.pop-cart-is-empty').replaceWith(cartItemCont);
-        this.eventsListener();
+        document.querySelector('#navbar').append(this.popCartCreator());
     }
 }
