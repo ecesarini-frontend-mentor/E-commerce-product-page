@@ -347,11 +347,15 @@ main {
     text-align: center;
 }
 .pop-cart-items-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 20% 1fr;
 }
 .pop-cart-items {
     display: flex;
+}
+.pop-cart-items img {
+    width: 20%; /* <-- from here */
 }
 .pop-cart-items-display-prod-2nd-row {
     display: flex;

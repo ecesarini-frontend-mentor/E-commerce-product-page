@@ -1,7 +1,7 @@
 import {Gal} from './gal.js';
 /*
     TODO:
-        - populate cart selection;
+        - style about style.css@358, problems about css design. Check it out!
 */
 
 function ecppjs() {
