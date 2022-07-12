@@ -8,7 +8,6 @@ export class Gal extends GalTools {
         this.cartCount = 0;
         this.modalBtnClk = null;
         this.cartIsClicked = false;
-        this.itemInCart = false;
         this.eventsListener();
     }
     eventsListener() {
@@ -56,7 +55,7 @@ export class Gal extends GalTools {
                     this.cartToggle();
                 }
                 if(ect.matches('.desc-purchase-add-cart')) {
-                    this.cartAddItems(document);
+                    this.cartAddItems();
                 }
                 break;
             case 'load':
@@ -133,31 +132,11 @@ export class Gal extends GalTools {
         this.cartIsClicked = !this.cartIsClicked;
     }
 
-    cartAddItems(elem) {
-        //this.itemInCart = true;
-
+    cartAddItems() {
         let purchCount = (this.cartCount > 0)? this.cartCount: 1;
-        const cartItemContainer = this.popCartPopulate(),
-            cartIsEmpty = elem.querySelector('.pop-cart-is-empty');
+        const cartItemCont = this.popCartPopulate(purchCount);
 
-        const compute = (tg) => {
-            const descH = tg.querySelector('.desc-h').innerText,
-                items1RowDesc = tg.querySelector('.pop-cart-items-details-prod-1row'),
-                items2RowCount = tg.querySelector('.pop-cart-items-details-prod-2row :nth-child(1)'),
-                items2RowTotal = tg.querySelector('.pop-cart-items-details-prod-2row :nth-child(2)'),
-                price = tg.querySelector('.desc-price-current').innerText.slice(1),
-                total = Number.parseFloat(Number.parseFloat(price) * Number.parseInt(purchCount)).toFixed(2);
-
-            items1RowDesc.innerText = descH;
-            items2RowCount.innerText = `$${price} x ${purchCount} `;
-            items2RowTotal.innerText = '$' + total;            
-        };
-        cartIsEmpty.style.display = 'none';
-        compute(elem);
-
-        //if(!this.itemInCart) 
-        document.querySelector('.pop-cart-content').append(cartItemContainer);
-
+        document.querySelector('.pop-cart-is-empty').replaceWith(cartItemCont);
         this.eventsListener();
     }
 }

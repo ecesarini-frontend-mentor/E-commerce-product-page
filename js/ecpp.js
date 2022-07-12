@@ -1,7 +1,8 @@
 import {Gal} from './gal.js';
 /*
     TODO:
-        - style about style.css@358, problems about css design. Check it out!
+        - gals.js@137: problems with method cartAddItems(elem): console logs.
+
 */
 
 function ecppjs() {

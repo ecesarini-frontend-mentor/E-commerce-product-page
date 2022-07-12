@@ -86,14 +86,18 @@ export class GalTools {
 
     }
 
-    popCartPopulate() {
+    popCartPopulate(purchCount) {
+        const descH = document.querySelector('.desc-h').innerText,
+            descPC = Number.parseInt(document.querySelector('.desc-price-current').innerText);
+
         const popCartItemsContainer = document.createElement('div'), 
             popCartItems = document.createElement('div'),
             popCartItemsImg = document.createElement('img'),
             popCartItemsDetails = document.createElement('div'),
             popCartItemsDetailsProd1Row = document.createElement('div'),
             popCartItemsDetailsProd2Row = document.createElement('div'),
-            popCartItemsDetailsProd2RowPricer = document.createElement('span'),
+            popCartItemsDetailsProd2RowPrice = document.createElement('span'),
+            popCartItemsDetailsProd2RowCount = document.createElement('span'),
             popCartItemsDetailsProd2RowTotal = document.createElement('span'),
             popCartItemsDetailsIconBtn = document.createElement('button'),
             popCartItemsDetailsIconImg = document.createElement('img'),
@@ -111,8 +115,11 @@ export class GalTools {
 
         popCartItemsImg.src = document.querySelector('.tmb-btn img').src;
         popCartItemsImg.alt = 'Product on cart';
+        popCartItemsDetailsProd1Row.innerText = descH;
+        popCartItemsDetailsProd2RowPrice.innerText = descPC;
+        popCartItemsDetailsProd2RowCount.innerText = descPC * purchCount;
 
-        popCartItemsDetailsProd2Row.append(popCartItemsDetailsProd2RowPricer, popCartItemsDetailsProd2RowTotal);
+        popCartItemsDetailsProd2Row.append(popCartItemsDetailsProd2RowPrice, popCartItemsDetailsProd2RowCount, popCartItemsDetailsProd2RowTotal);
         popCartItemsDetails.append(popCartItemsDetailsProd1Row, popCartItemsDetailsProd2Row);
         popCartItemsDetailsIconBtn.append(popCartItemsDetailsIconImg);
         popCartItems.append(popCartItemsImg, popCartItemsDetails, popCartItemsDetailsIconBtn);
