@@ -58,9 +58,6 @@ export class Gal extends GalTools {
                 if(ect.matches('.desc-purchase-add-cart')) {
                     this.cartAddItems(document);
                 }
-                if(ect.matches('.pop-cart-items-details-icon-btn')) {
-                    this.cartRemoveItem(ect);
-                }
                 break;
             case 'load':
                 this.createCart();
@@ -137,47 +134,30 @@ export class Gal extends GalTools {
     }
 
     cartAddItems(elem) {
-        this.cartCount = (this.cartCount > 0)? this.cartCount: 1;
-        const cartItemContainer = this.popCartItemsAdder(),
-            cartIsEmpty = elem.querySelector('.pop-cart-is-empty'),
-            cartTail = document.querySelector('.pop-cart-tail'),
-            cartNavTailI = document.querySelector('.nav-tail-btn-cart-i');
+        //this.itemInCart = true;
+
+        let purchCount = (this.cartCount > 0)? this.cartCount: 1;
+        const cartItemContainer = this.popCartPopulate(),
+            cartIsEmpty = elem.querySelector('.pop-cart-is-empty');
 
         const compute = (tg) => {
-            const descH = document.querySelector('.desc-h').innerText,
-                price = document.querySelector('.desc-price-current').innerText.slice(1),
+            const descH = tg.querySelector('.desc-h').innerText,
                 items1RowDesc = tg.querySelector('.pop-cart-items-details-prod-1row'),
                 items2RowCount = tg.querySelector('.pop-cart-items-details-prod-2row :nth-child(1)'),
                 items2RowTotal = tg.querySelector('.pop-cart-items-details-prod-2row :nth-child(2)'),
-                total = Number.parseFloat(Number.parseFloat(price) * Number.parseInt(this.cartCount)).toFixed(2);
+                price = tg.querySelector('.desc-price-current').innerText.slice(1),
+                total = Number.parseFloat(Number.parseFloat(price) * Number.parseInt(purchCount)).toFixed(2);
 
             items1RowDesc.innerText = descH;
-            items2RowCount.innerText = `$${price} x ${this.cartCount} `;
+            items2RowCount.innerText = `$${price} x ${purchCount} `;
             items2RowTotal.innerText = '$' + total;            
         };
-
         cartIsEmpty.style.display = 'none';
-        cartTail.style.display = 'block';
-        cartNavTailI.style.display = 'block';
+        compute(elem);
 
+        //if(!this.itemInCart) 
         document.querySelector('.pop-cart-content').append(cartItemContainer);
-        let tg = elem.querySelector('.pop-cart-content').lastElementChild;
-        compute(tg);
-        this.eventsListener();
-    }
 
-    cartRemoveItem(ect) {
-        const itemTarget = ect.closest('.pop-cart-items'),
-            cartEmptyCheck = () => {
-                const pcic = document.querySelector('.pop-cart-items'),
-                    pcie = document.querySelector('.pop-cart-is-empty'),
-                    pct = document.querySelector('.pop-cart-tail');
-                
-                if(!pcic) {
-                    [pcie, pct].forEach( i => i.style.display = '');
-                }
-            };
-        itemTarget.remove();
-        cartEmptyCheck();                
+        this.eventsListener();
     }
 }

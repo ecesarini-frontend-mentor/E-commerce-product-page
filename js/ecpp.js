@@ -1,7 +1,7 @@
 import {Gal} from './gal.js';
 /*
     TODO:
-        - gals.js@137: problems with method cartAddItems(elem): console logs.
+        - gals.js@151: 'navbar img items update.';
 
 */
 

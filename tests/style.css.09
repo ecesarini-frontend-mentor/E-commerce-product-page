@@ -82,15 +82,7 @@ main {
     align-items: center;
 }
 .nav-tail-btn-cart {
-    position: relative;
     width: 2.7rem;
-}
-.nav-tail-btn-cart i {
-    display: none;
-    position: absolute;
-    color: var(--white);
-    background-color: var(--orange);
-    border-radius: 3px;
 }
 .nav-tail-btn-cart-img {
     width: 100%;

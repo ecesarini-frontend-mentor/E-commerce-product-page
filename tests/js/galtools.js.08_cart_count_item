@@ -60,15 +60,6 @@ export class GalTools {
         return modal;
     }
 
-    /*cartHoverCountCreate() {
-        const cartNavbarHoverContainer = document.createElement('i');
-        
-        cartHoverCountContainer.classList.add('cart-navbar-hover-container');
-
-        return cartNavbarHoverContainer;
-
-    }*/
-
     popCartCreate() {
         const popCartCreated  = document.createElement('div'), 
             popCartContainer = document.createElement('div'),
@@ -129,6 +120,9 @@ export class GalTools {
         popCartItemsContainer.append(popCartItems);
 
         return popCartItemsContainer;
+    }
+
+    popCartCheckout() {
     }
 
 }

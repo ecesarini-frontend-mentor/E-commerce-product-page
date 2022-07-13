@@ -140,8 +140,7 @@ export class Gal extends GalTools {
         this.cartCount = (this.cartCount > 0)? this.cartCount: 1;
         const cartItemContainer = this.popCartItemsAdder(),
             cartIsEmpty = elem.querySelector('.pop-cart-is-empty'),
-            cartTail = document.querySelector('.pop-cart-tail'),
-            cartNavTailI = document.querySelector('.nav-tail-btn-cart-i');
+            cartTail = document.querySelector('.pop-cart-tail');
 
         const compute = (tg) => {
             const descH = document.querySelector('.desc-h').innerText,
@@ -155,10 +154,8 @@ export class Gal extends GalTools {
             items2RowCount.innerText = `$${price} x ${this.cartCount} `;
             items2RowTotal.innerText = '$' + total;            
         };
-
         cartIsEmpty.style.display = 'none';
         cartTail.style.display = 'block';
-        cartNavTailI.style.display = 'block';
 
         document.querySelector('.pop-cart-content').append(cartItemContainer);
         let tg = elem.querySelector('.pop-cart-content').lastElementChild;
@@ -179,5 +176,6 @@ export class Gal extends GalTools {
             };
         itemTarget.remove();
         cartEmptyCheck();                
+        //debugger;
     }
 }
