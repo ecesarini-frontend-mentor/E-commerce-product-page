@@ -34,6 +34,9 @@ button {
 	outline: inherit;
 }
 
+/*header {
+    position: relative;
+}*/
 
 html { 
     height: 100%;
@@ -43,24 +46,30 @@ body {
     box-sizing: content-box;
     min-height: 100vh;
     max-width: var(--desktop-width);
+    /*margin: 0 auto;
+    margin: 4% 12% 0 12%;*/
     margin: 4vh 12vw 0 12vw;
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 16px;
     background-color: var(--white); 
 }
 
+/*body {
+    box-sizing: content-box;
+    max-width: 1440px;
+    width: 100%;
+    margin: 4% 12% 0 12%;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 16px;
+}*/
 
 main {
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    position: relative;
 }
 
 
 /* NAVBAR */
-#navbar-container {
-    width: 100%;
-    position: relative;
-}
 #navbar {
     position: relative;
     display: flex;
@@ -143,22 +152,22 @@ main {
     width: var(--img-width);
     border-radius: 10px;
 }
-.product-thumb {
+#image-side .product-thumb {
     width: var(--img-width);
     display: flex;
     justify-content: space-between;
 }
-.product-thumb .tmb-btn {
+#image-side .product-thumb .tmb-btn {
     margin: 20px 7px;
     border-radius: 5px;
 }
-.product-thumb .tmb-btn:focus {
+#image-side .product-thumb .tmb-btn:focus {
     opacity: 0.7;
     border: 5px solid var(--orange);
     border-radius: 5px;
     background-color: var(--orange);
 }
-.product-thumb .tmb-btn img {
+#image-side .product-thumb .tmb-btn img {
     width: 100%;
     height: 100%;
     border-radius: 5px;
@@ -421,34 +430,4 @@ main {
     color: var(--white);
     background-color: var(--orange);
     border-radius: 7px;
-}
-
-/* MEDIA QUERY */
-@media screen and (max-width: 700px) {
-    body {
-        width: 100vw;
-        margin: 0;
-    }
-    /*.nav-cat {
-        visibility: hidden;
-    }*/
-    #image-side {
-        display: block;
-    }
-    #desc-side {
-        width: 100%;
-        margin: 5%;
-    }
-    #content {
-        flex-direction: column;
-        margin: 0;
-    }
-    .product-sel img {
-        border-radius: 0;
-    }
-    .product-thumb {
-        display: none;
-    }
-
-    
 }

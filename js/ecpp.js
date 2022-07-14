@@ -1,7 +1,9 @@
 import {Gal} from './gal.js';
 /*
+    desktop viewport works;
+
     TODO:
-        - gals.js@151: 'navbar img items update.';
+        - mobile design: style.css@426: media query;
 
 */
 

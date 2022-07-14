@@ -18,9 +18,9 @@
   </style>
 </head>
 <body>
-  <main>
-    <div id="navbar-container">
+  <header>
       <ul id="navbar">
+        <!---<li class="nav-item nav-logo"></li>-->
         <li class="nav-item nav-top">
           <img src="images/logo.svg" alt="site logo">
           <button class="nav-cat" type="button"><span>Collections</span></button>
@@ -40,8 +40,8 @@
         </li>
       </ul>
       <hr class="navbar-hr">
-    </div>
-
+  </header>
+  <main>
     <div id="content">
       <div id="image-side">
         <button class="product-sel"><img src="images/image-product-1.jpg" alt="product focused"></button>

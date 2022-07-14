@@ -6,11 +6,9 @@ export class Gal extends GalTools {
         this.mainContainer = document.querySelector('main');
         this.modalOnClk = document.querySelector('.product-sel');
         this.cartCount = 0;
-        this.cartPurchases = 0;
         this.modalBtnClk = null;
         this.cartIsClicked = false;
         this.itemInCart = false;
-        this.mediaQueryWidth = window.matchMedia('(max-width: 700px)');
         this.eventsListener();
     }
     eventsListener() {
@@ -19,14 +17,18 @@ export class Gal extends GalTools {
         window.addEventListener('load', this);
         this.modalOnClk.addEventListener('click', this);
         btn.forEach(b => b.addEventListener('click', this));
-        if(this.modalBtnClk && !this.mediaQueryWidth) {
+        if(this.modalBtnClk) {
             this.modalBtnClk.forEach(m => m.addEventListener('click', this));
         }
-        //this.mediaQuery.addEventListener('change', this);
     }
     handleEvent(e) {
         const ect = e.currentTarget;
         let selTg = undefined;
+            //addToCart = 0;
+
+        function cartChecker() {
+
+        }
 
         switch(e.type) {
             case 'click':
@@ -50,7 +52,7 @@ export class Gal extends GalTools {
                 if(ect.matches('.desc-purchase-addremove')) {
                     this.purchaseSel(ect);
                 }
-                if(ect.matches('.nav-tail-btn-cart')) {
+                if(ect.matches('.nav-btn-cart')) {
                     this.cartToggle();
                 }
                 if(ect.matches('.desc-purchase-add-cart')) {
@@ -136,7 +138,6 @@ export class Gal extends GalTools {
 
     cartAddItems(elem) {
         this.cartCount = (this.cartCount > 0)? this.cartCount: 1;
-        this.cartPurchases = this.cartPurchases + 1;
         const cartItemContainer = this.popCartItemsAdder(),
             cartIsEmpty = elem.querySelector('.pop-cart-is-empty'),
             cartTail = document.querySelector('.pop-cart-tail'),
@@ -158,31 +159,25 @@ export class Gal extends GalTools {
         cartIsEmpty.style.display = 'none';
         cartTail.style.display = 'block';
         cartNavTailI.style.display = 'block';
-        cartNavTailI.innerText = this.cartPurchases;
 
         document.querySelector('.pop-cart-content').append(cartItemContainer);
         let tg = elem.querySelector('.pop-cart-content').lastElementChild;
         compute(tg);
-        this.eventsListener(); //It's needed to actiavate eventsListener on new cart html container
+        this.eventsListener();
     }
 
     cartRemoveItem(ect) {
         const itemTarget = ect.closest('.pop-cart-items'),
-            cartNavTailI = document.querySelector('.nav-tail-btn-cart-i'),
             cartEmptyCheck = () => {
                 const pcic = document.querySelector('.pop-cart-items'),
                     pcie = document.querySelector('.pop-cart-is-empty'),
                     pct = document.querySelector('.pop-cart-tail');
                 
                 if(!pcic) {
-                    [pcie, pct, cartNavTailI].forEach( i => i.style.display = '');
+                    [pcie, pct].forEach( i => i.style.display = '');
                 }
             };
-
         itemTarget.remove();
-        this.cartPurchases = this.cartPurchases - 1;
-        cartNavTailI.innerText = this.cartPurchases;
-
         cartEmptyCheck();                
     }
 }
