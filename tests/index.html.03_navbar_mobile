@@ -19,18 +19,15 @@
 </head>
 <body>
   <main>
-    <div id="leftbar"></div>
     <div id="navbar-container">
       <ul id="navbar">
-        <li class="nav-item nav-img">
+        <li class="nav-item nav-top">
           <img src="images/logo.svg" alt="site logo">
-        </li>
-        <li class="nav-item nav-cat">
-          <button class="nav-cat-btn" type="button"><span>Collections</span></button>
-          <button class="nav-cat-btn" type="button"><span>Men</span></button>
-          <button class="nav-cat-btn" type="button"><span>Women</span></button>
-          <button class="nav-cat-btn" type="button"><span>About</span></button>
-          <button class="nav-cat-btn" type="button"><span>Contact</span></button>
+          <button class="nav-cat" type="button"><span>Collections</span></button>
+          <button class="nav-cat" type="button"><span>Men</span></button>
+          <button class="nav-cat" type="button"><span>Women</span></button>
+          <button class="nav-cat" type="button"><span>About</span></button>
+          <button class="nav-cat" type="button"><span>Contact</span></button>
         </li>
         <li class="nav-item nav-tail">
           <button class="nav-tail-btn-cart" type="button">
