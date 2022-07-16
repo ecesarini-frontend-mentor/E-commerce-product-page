@@ -1,0 +1,38 @@
+import { GalTools } from "./galtools.js";
+
+export class GalMq extends GalTools {
+    constructor() {
+        super();
+    }
+
+    mqArranger() {
+        const navbar = document.querySelector('#navbar'),
+            navCat = document.querySelector('.nav-cat'),
+            imgSide = document.querySelector('#image-side'),
+            prodSel = document.querySelector('.product-sel'),
+            prodSelImg = prodSel.firstElementChild,
+            leftbar = document.querySelector('#leftbar'),
+
+            navbarMenuBtn = document.createElement('button'),
+            navbarMenuBtnImg = document.createElement('img'),
+            leftbarCloseBtn = document.createElement('button'),
+            leftbarCloseBtnImg = document.createElement('img');
+        
+        navbarMenuBtn.classList.add('nav-menu-btn');
+        navbarMenuBtnImg.setAttribute('src', './images/icon-menu.svg');
+        navbarMenuBtnImg.setAttribute('alt', 'Categories menu');
+        
+        leftbarCloseBtn.classList.add('leftbar-close-btn');
+        leftbarCloseBtn.setAttribute('src', './images/icon-close.svg');
+        leftbarCloseBtnImg.setAttribute('alt', 'Categories close button');
+
+        imgSide.prepend(prodSelImg);
+        prodSel.style.display = 'none';
+
+        navbarMenuBtn.append(navbarMenuBtnImg);
+        navbar.prepend(navbarMenuBtn);
+
+        leftbarCloseBtn.append(leftbarCloseBtnImg);
+        leftbar.append(leftbarCloseBtn, navCat);
+    }
+}

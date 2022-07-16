@@ -420,7 +420,7 @@ main {
     border-radius: 7px;
 }
 
-#leftbar {
+.mq-leftbar {
     position: absolute;
     display: none;
     flex-direction: column;
@@ -430,45 +430,20 @@ main {
 /* MEDIA QUERY */
 @media screen and (max-width: 700px) {
     body {
-        width: 100%;
+        width: 100vw;
         margin: 0;
     }
     main {
         position: relative;
-        width: 100%;
-        margin: 0 auto;
     }
-    #navbar {
-        width: 100%;
+    .nav-cat {
+        display: flex;
+        flex-direction: column;
         justify-content: flex-start;
     }
-    .nav-menu-btn {
-        width: 10%;
-        margin-right: 3%;
-    }
-    .nav-tail {
-        margin-left: auto;
-        justify-content: flex-end;
-    }
-    .nav-tail-btn-cart {
-        margin-right: 10px;
-    }
-    .navbar-hr {
-        display: none;
-    }
-    
-    #image-side {
-        position: relative;
+    /*#image-side {
         display: block;
-    }
-    #image-side .mq-prod-sel button{
-        position: absolute;
-    }
-
-
-    #image-side img {
-        width: 100%;
-    }
+    }*/
     #desc-side {
         width: 100%;
         margin: 5%;
@@ -482,12 +457,6 @@ main {
     }
     .product-thumb {
         display: none;
-    }
-    
-    #leftbar .nav-cat {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
     }
 
     

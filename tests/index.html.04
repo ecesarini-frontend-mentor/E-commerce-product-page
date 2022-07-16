@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+  </style>
+</head>
+<body>
+  <main>
+    <div id="leftbar"></div>
+    <div id="navbar-container">
+      <ul id="navbar">
+        <li class="nav-item nav-img">
+          <img src="images/logo.svg" alt="site logo">
+        </li>
+        <li class="nav-item nav-cat">
+          <button class="nav-cat-btn" type="button"><span>Collections</span></button>
+          <button class="nav-cat-btn" type="button"><span>Men</span></button>
+          <button class="nav-cat-btn" type="button"><span>Women</span></button>
+          <button class="nav-cat-btn" type="button"><span>About</span></button>
+          <button class="nav-cat-btn" type="button"><span>Contact</span></button>
+        </li>
+        <li class="nav-item nav-tail">
+          <button class="nav-tail-btn-cart" type="button">
+            <i class="nav-tail-btn-cart-i">
+              <div class="nav-tail-btn-cart-i-count"></div>
+            </i>
+            <img class="nav-tail-btn-cart-img" src="images/icon-cart.svg" alt="navbar cart">
+          </button>
+          <button class="nav-tail-btn-avatar" type="button"><img class="nav-tail-btn-avatar-img" src="images/image-avatar.png" alt="navbar avatar"></button>
+        </li>
+      </ul>
+      <hr class="navbar-hr">
+    </div>
+
+    <div id="content">
+      <div id="image-side">
+        <button class="product-sel"><img src="images/image-product-1.jpg" alt="product focused"></button>
+        <div class="product-thumb">
+          <button class="tmb-btn" type="button"><img src="images/image-product-1-thumbnail.jpg" alt="product 1 thumb"></button>
+          <button class="tmb-btn" type="button"><img src="images/image-product-2-thumbnail.jpg" alt="product 2 thumb"></button>
+          <button class="tmb-btn" type="button"><img src="images/image-product-3-thumbnail.jpg" alt="product 3 thumb"></button>
+          <button class="tmb-btn" type="button"><img src="images/image-product-4-thumbnail.jpg" alt="product 4 thumb"></button>
+        </div>
+      </div>
+      <div id="desc-side">
+        <p class="desc-top">Sneaker Company</p>
+        <h2 class="desc-h">Fall Limited Edition Sneakers</h2>
+        <p class="desc-par">
+          These low-profile sneakers are your perfect casual wear companion. Featuring a 
+          durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
+        <div class="desc-price">
+          <span class="desc-price-current">$125.00</span>
+          <span class="desc-price-discount">50%</span>
+        </div>
+        <div class="desc-price-old">$250.00</div>
+        <div class="desc-purchase-container">
+          <div class="desc-purchase-selection">
+            <button class="desc-purchase-addremove desc-purchase-minus" type="button"><img src="images/icon-minus.svg" alt="remove item"></button>
+            <span class="desc-purchase-count">0</span>
+            <button class="desc-purchase-addremove desc-purchase-plus" type="button"><img src="images/icon-plus.svg" alt="add item"></button>
+          </div>
+          <button class="desc-purchase-add-cart">
+            <img src="images/icon-cart-purchase.svg" alt="svg cart">
+            <span>Add to cart</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="js/ecpp.js"></script>
+  <script type="module" src="js/gal.js"></script>
+</body>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/ecesarini">Ettore Cesarini</a>.
+  </footer>
+</html>

@@ -10,8 +10,7 @@ export class Gal extends GalMq {
         this.modalBtnClk = null;
         this.cartIsClicked = false;
         this.itemInCart = false;
-        //this.mediaQueryWidth = window.matchMedia("(min-width: 700px)"); // top-down approach: 'min-width' means MINIMUM display size and it triggers if viewport match not more than '700px'
-        this.mediaQueryWidth = window.matchMedia('(max-width: 700px)');
+        this.mediaQueryWidth = window.matchMedia("(max-width: 700px)").matches;
         this.eventsListener();
     }
     eventsListener() {
@@ -63,7 +62,7 @@ export class Gal extends GalMq {
                 break;
             case 'load':
                 this.createCart();
-                if(this.mediaQueryWidth.matches) {
+                if(this.mediaQueryWidth) {
                     this.mqArranger();
                 }
                 break;
