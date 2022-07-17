@@ -32,11 +32,11 @@ export class GalMq extends GalTools {
         prodSelContainerNextImg.setAttribute('alt', 'Mobile next item.');
         
         leftbarCloseBtn.classList.add('leftbar-close-btn');
-        leftbarCloseBtnImg.setAttribute('src', './images/icon-close.svg');
+        leftbarCloseBtn.setAttribute('src', './images/icon-close.svg');
         leftbarCloseBtnImg.setAttribute('alt', 'Categories close button');
         prodSelContainer.classList.add('mq-prod-sel');
-        prodSelContainerPreviousBtn.classList.add('mq-prod-sel-btn', 'mq-prod-sel-btn-previous');
-        prodSelContainerNextBtn.classList.add('mq-prod-sel-btn', 'mq-prod-sel-btn-next');
+        prodSelContainerPreviousBtn.classList.add('mq-prod-sel-btn-previous');
+        prodSelContainerNextBtn.classList.add('mq-prod-sel-btn-next');
 
         prodSelContainerPreviousBtn.append(prodSelContainerPreviousImg);
         prodSelContainerNextBtn.append(prodSelContainerNextImg);

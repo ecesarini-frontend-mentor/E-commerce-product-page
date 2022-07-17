@@ -18,8 +18,8 @@
   </style>
 </head>
 <body>
-  <div id="leftbar"></div>
   <main>
+    <div id="leftbar"></div>
     <div id="navbar-container">
       <ul id="navbar">
         <li class="nav-item nav-img">

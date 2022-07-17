@@ -10,7 +10,6 @@ export class Gal extends GalMq {
         this.modalBtnClk = null;
         this.cartIsClicked = false;
         this.itemInCart = false;
-        this.navBtnIsClicked = false;
         //this.mediaQueryWidth = window.matchMedia("(min-width: 700px)"); // top-down approach: 'min-width' means MINIMUM display size and it triggers if viewport match not more than '700px'
         this.mediaQueryWidth = window.matchMedia('(max-width: 700px)');
         this.eventsListener();
@@ -27,10 +26,7 @@ export class Gal extends GalMq {
         //this.mediaQueryWidth.addEventListener('change', this);
     }
     handleEvent(e) {
-        const ect = e.currentTarget,
-            leftbar = document.querySelector('#leftbar'),
-            modalImgSlider = ['.modal-top-btn-previous', '.modal-top-btn-next'],            
-            leftbarImgSlider = ['.mq-prod-sel-btn-previous', '.mq-prod-sel-btn-next'];
+        const ect = e.currentTarget;
         let selTg = undefined;
 
         switch(e.type) {
@@ -46,10 +42,7 @@ export class Gal extends GalMq {
                     this.modalOff();    
                 }
                 if(ect.matches('.modal-top-btn')) {
-                    this.imageSlider(ect, modalImgSlider);
-                }
-                if(ect.matches('.mq-prod-sel-btn')) {
-                    this.imageSlider(ect, leftbarImgSlider);
+                    this.modalSliderTopBtn(ect);
                 }
                 if(ect.matches('.modal-bottom-thumb-button')) {
                     selTg = '.modal-top-main-img';
@@ -67,15 +60,11 @@ export class Gal extends GalMq {
                 if(ect.matches('.pop-cart-items-details-icon-btn')) {
                     this.cartRemoveItem(ect);
                 }
-                if(ect.matches('.nav-menu-btn')) {
-                    this.leftbarOn();
-                }
                 break;
             case 'load':
                 this.createCart();
                 if(this.mediaQueryWidth.matches) {
                     this.mqArranger();
-                    this.eventsListener();
                 }
                 break;
         }
@@ -99,11 +88,12 @@ export class Gal extends GalMq {
         this.eventsListener();
     }
     modalOff() {
+        //modal.style.display = 'none';
         document.querySelector('.modal').remove();
         this.modalBtnClk = null;
         this.eventsListener();
     }
-    imageSlider(ect, actionBtn) {
+    modalSliderTopBtn(ect) {
         const reg = /-(\d)/;
         let mainImg;
         const matcher = (order) => {
@@ -119,11 +109,11 @@ export class Gal extends GalMq {
             mainImg.src = mainImg.src.replace(regMatch[0], repl);
         }
         
-        if(ect.matches(actionBtn[0])) {
+        if (ect.matches('.modal-top-btn-previous')) {
             mainImg = ect.nextElementSibling;
             matcher('previous');
         }
-        else if(ect.matches(actionBtn[1])) {
+        else if(ect.matches('.modal-top-btn-next')) {
             mainImg = ect.previousElementSibling;
             matcher('next');
         }
@@ -199,16 +189,4 @@ export class Gal extends GalMq {
 
         cartEmptyCheck();                
     }
-
-    leftbarOn() {
-        const leftbar = document.querySelector('#leftbar'),
-            main = document.querySelector('main');
-
-        this.navBtnIsClicked = !this.navBtnIsClicked;
-        
-        leftbar.style.display = 'flex';
-        main.classList.add('main-mq');
-        this.eventsListener();
-    }
-
 }
