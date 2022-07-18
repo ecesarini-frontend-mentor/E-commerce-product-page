@@ -461,7 +461,7 @@ main {
         position: relative;
         display: block;
     }
-    #image-side .mq-prod-sel button{
+    #image-side .prod-sel-mq button{
         position: absolute;
     }
 

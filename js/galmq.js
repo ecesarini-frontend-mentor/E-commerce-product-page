@@ -5,49 +5,38 @@ export class GalMq extends GalTools {
         super();
     }
 
-    mqArranger() {
-        const navbar = document.querySelector('#navbar'),
+    mqToMobile() {
+        const leftbarContent = document.querySelector('.leftbar-content'),
             navCat = document.querySelector('.nav-cat'),
             imgSide = document.querySelector('#image-side'),
-            prodSel = document.querySelector('.product-sel'),
-            prodSelMainImg = prodSel.firstElementChild,
-            leftbar = document.querySelector('#leftbar'),
-
-            navbarMenuBtn = document.createElement('button'),
-            navbarMenuBtnImg = document.createElement('img'),
-            leftbarCloseBtn = document.createElement('button'),
-            leftbarCloseBtnImg = document.createElement('img'),
+            productSel = document.querySelector('.product-sel'),
+            prodSelMainImg = document.querySelector('.product-sel-main-img'),
             prodSelContainer = document.createElement('div'),
             prodSelContainerPreviousBtn = document.createElement('button'),
             prodSelContainerPreviousImg = document.createElement('img'),
             prodSelContainerNextBtn = document.createElement('button'),
             prodSelContainerNextImg = document.createElement('img');
         
-        navbarMenuBtn.classList.add('nav-menu-btn');
-        navbarMenuBtnImg.setAttribute('src', './images/icon-menu.svg');
-        navbarMenuBtnImg.setAttribute('alt', 'Categories menu');
         prodSelContainerPreviousImg.setAttribute('src', './images/icon-previous.svg');
-        prodSelContainerPreviousImg.setAttribute('alt', 'Mobile previous item.');
+        prodSelContainerPreviousImg.setAttribute('alt', 'Mobile leftbar previous item.');
         prodSelContainerNextImg.setAttribute('src', './images/icon-next.svg');
-        prodSelContainerNextImg.setAttribute('alt', 'Mobile next item.');
+        prodSelContainerNextImg.setAttribute('alt', 'Mobile leftbar next item.');
         
-        leftbarCloseBtn.classList.add('leftbar-close-btn');
-        leftbarCloseBtnImg.setAttribute('src', './images/icon-close.svg');
-        leftbarCloseBtnImg.setAttribute('alt', 'Categories close button');
-        prodSelContainer.classList.add('mq-prod-sel');
-        prodSelContainerPreviousBtn.classList.add('mq-prod-sel-btn', 'mq-prod-sel-btn-previous');
-        prodSelContainerNextBtn.classList.add('mq-prod-sel-btn', 'mq-prod-sel-btn-next');
+        prodSelContainer.classList.add('prod-sel-mq');
+        prodSelContainerPreviousBtn.classList.add('prod-sel-mq-btn', 'prod-sel-mq-btn-previous');
+        prodSelContainerNextBtn.classList.add('prod-sel-mq-btn', 'prod-sel-mq-btn-next');
 
         prodSelContainerPreviousBtn.append(prodSelContainerPreviousImg);
         prodSelContainerNextBtn.append(prodSelContainerNextImg);
         prodSelContainer.append(prodSelContainerPreviousBtn, prodSelMainImg, prodSelContainerNextBtn);
         imgSide.prepend(prodSelContainer);
-        prodSel.style.display = 'none';
+        //productSel.style.display = 'none';
 
-        navbarMenuBtn.append(navbarMenuBtnImg);
-        navbar.prepend(navbarMenuBtn);
+        imgSide.prepend(productSel);
+        leftbarContent.append(navCat);
+    }
 
-        leftbarCloseBtn.append(leftbarCloseBtnImg);
-        leftbar.append(leftbarCloseBtn, navCat);
+    mqToDesktop() {
+
     }
 }

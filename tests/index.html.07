@@ -18,22 +18,10 @@
   </style>
 </head>
 <body>
-  <div id="leftbar">
-    <div class="leftbar-content">
-      <button class="leftbar-close-btn">
-        <img src="images/icon-close.svg" alt="Catgeories left sidebar close buotton.">
-      </button>
-    </div>
-    <div class="leftbar-overlay"></div>
-  </div>
+  <div id="leftbar"></div>
   <main>
     <div id="navbar-container">
       <ul id="navbar">
-        <li class="nav-menu">
-          <button class="nav-menu-btn">
-            <img src="./images/icon-menu.svg" alt="Categories Menu">
-          </button>
-        </li>
         <li class="nav-item nav-img">
           <img src="images/logo.svg" alt="site logo">
         </li>
@@ -59,7 +47,7 @@
 
     <div id="content">
       <div id="image-side">
-        <button class="product-sel"><img class="product-sel-main-img" src="images/image-product-1.jpg" alt="product focused"></button>
+        <button class="product-sel"><img src="images/image-product-1.jpg" alt="product focused"></button>
         <div class="product-thumb">
           <button class="tmb-btn" type="button"><img src="images/image-product-1-thumbnail.jpg" alt="product 1 thumb"></button>
           <button class="tmb-btn" type="button"><img src="images/image-product-2-thumbnail.jpg" alt="product 2 thumb"></button>
