@@ -458,7 +458,7 @@ main {
         position: relative;
         display: block;
     }
-    #image-side .prod-sel-mq-btn {
+    #image-side .product-sel-mq-btn {
         position: absolute;
     }
     
@@ -493,10 +493,10 @@ main {
         font-weight: 700;
     }
 
-    #image-side .prod-sel-mq > img {
+    #image-side .product-sel-mq > img {
         width: 100%;
     }
-    .prod-sel-mq-btn {
+    .product-sel-mq-btn {
         position: absolute;
         top: 40%;
         display: flex;
@@ -507,13 +507,13 @@ main {
         background-color: var(--white);
         border-radius: 50%;
     }
-    .prod-sel-mq-btn img {
+    .product-sel-mq-btn img {
         width: 30%;
     }
-    .prod-sel-mq-btn-previous {
+    .product-sel-mq-btn-previous {
         margin-left: 3%;
     }
-    .prod-sel-mq-btn-next {
+    .product-sel-mq-btn-next {
         right: 0;
         margin-right: 3%;
     }

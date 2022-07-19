@@ -34,9 +34,9 @@ export class GalMq extends GalTools {
         leftbarCloseBtn.classList.add('leftbar-close-btn');
         leftbarCloseBtn.setAttribute('src', './images/icon-close.svg');
         leftbarCloseBtnImg.setAttribute('alt', 'Categories close button');
-        prodSelContainer.classList.add('prod-sel-mq');
-        prodSelContainerPreviousBtn.classList.add('prod-sel-mq-btn-previous');
-        prodSelContainerNextBtn.classList.add('prod-sel-mq-btn-next');
+        prodSelContainer.classList.add('product-sel-mq');
+        prodSelContainerPreviousBtn.classList.add('product-sel-mq-btn-previous');
+        prodSelContainerNextBtn.classList.add('product-sel-mq-btn-next');
 
         prodSelContainerPreviousBtn.append(prodSelContainerPreviousImg);
         prodSelContainerNextBtn.append(prodSelContainerNextImg);

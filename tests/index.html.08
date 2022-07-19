@@ -34,7 +34,7 @@
             <img src="./images/icon-menu.svg" alt="Categories Menu">
           </button>
         </li>
-        <li class="nav-item nav-sitelogo">
+        <li class="nav-item nav-img">
           <img src="images/logo.svg" alt="site logo">
         </li>
         <li class="nav-item nav-cat">
@@ -59,16 +59,7 @@
 
     <div id="content">
       <div id="image-side">
-        <div class="product-sel-mq">
-          <button class="product-sel-mq-btn product-sel-mq-btn-previous">
-            <img src="./images/icon-previous.svg" alt="Mobile leftbar previous item.">
-          <button class="product-sel-mq-btn product-sel-mq-btn-next">
-            <img src="./images/icon-next.svg" alt="Mobile leftbar next item.">
-          </button>
-        </div>
-        <button class="product-sel">
-          <img class="product-sel-main-img" src="images/image-product-1.jpg" alt="product focused">
-        </button>
+        <button class="product-sel"><img class="product-sel-main-img" src="images/image-product-1.jpg" alt="product focused"></button>
         <div class="product-thumb">
           <button class="tmb-btn" type="button"><img src="images/image-product-1-thumbnail.jpg" alt="product 1 thumb"></button>
           <button class="tmb-btn" type="button"><img src="images/image-product-2-thumbnail.jpg" alt="product 2 thumb"></button>

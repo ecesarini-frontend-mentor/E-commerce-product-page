@@ -10,7 +10,6 @@ export class Gal extends GalMq {
         this.modalBtnClk = null;
         this.cartIsClicked = false;
         this.itemInCart = false;
-        this.navBtnIsClicked = false;
         //this.mediaQueryWidth = window.matchMedia("(min-width: 700px)"); // top-down approach: 'min-width' means MINIMUM display size and it triggers if viewport match not more than '700px'
         this.mediaQueryWidth = window.matchMedia('(max-width: 700px)');
         this.eventsListener();
@@ -24,11 +23,11 @@ export class Gal extends GalMq {
         if(this.modalBtnClk) {
             this.modalBtnClk.forEach(m => m.addEventListener('click', this));
         }
-        //this.mediaQueryWidth.addEventListener('change', this);
+        this.mediaQueryWidth.addEventListener('change', this);
     }
     handleEvent(e) {
         const ect = e.currentTarget,
-            leftbar = document.querySelector('#leftbar'),
+            leftbar = document.querySelector('.leftbar-content'),
             modalImgSlider = ['.modal-top-btn-previous', '.modal-top-btn-next'],            
             leftbarImgSlider = ['.product-sel-mq-btn-previous', '.product-sel-mq-btn-next'];
         let selTg = undefined;
@@ -68,13 +67,25 @@ export class Gal extends GalMq {
                     this.cartRemoveItem(ect);
                 }
                 if(ect.matches('.nav-menu-btn')) {
-                    this.leftbarOn();
+                    this.leftbarToggler(true);
+                }
+                if(ect.matches('.leftbar-close-btn')) {
+                    this.leftbarToggler(false);
                 }
                 break;
             case 'load':
                 this.createCart();
                 if(this.mediaQueryWidth.matches) {
-                    this.mqArranger();
+                    this.mqToMobile();
+                    this.eventsListener();
+                }
+                break;
+            case 'change':
+                if(this.mediaQueryWidth.matches) {
+                    this.mqToMobile();
+                    this.eventsListener();
+                } else {
+                    this.mqToDesktop();
                     this.eventsListener();
                 }
                 break;
@@ -200,14 +211,12 @@ export class Gal extends GalMq {
         cartEmptyCheck();                
     }
 
-    leftbarOn() {
+    leftbarToggler(sel) {
         const leftbar = document.querySelector('#leftbar'),
-            main = document.querySelector('main');
-
-        this.navBtnIsClicked = !this.navBtnIsClicked;
+            leftbarContent = leftbar.firstElementChild;
         
-        leftbar.style.display = 'flex';
-        main.classList.add('main-mq');
+        leftbar.style.display = (sel)? 'flex': '';
+        leftbarContent.style.visibility = 'visible';
         this.eventsListener();
     }
 

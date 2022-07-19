@@ -3,40 +3,28 @@ import { GalTools } from "./galtools.js";
 export class GalMq extends GalTools {
     constructor() {
         super();
+        this.navbar = document.querySelector('#navbar');
+        this.navSitelogo = document.querySelector('.nav-sitelogo');
+        this.navCat = document.querySelector('.nav-cat');
+        this.leftbarContent = document.querySelector('.leftbar-content');
+        this.imageSide = document.querySelector('#image-side');
+        this.popCart = document.querySelector('.pop-cart-created');
+        this.mainImgTargetMq = document.querySelector('.product-sel-mq-btn-previous');
+        this.productSelMainImg = document.querySelector('.product-sel-main-img');
+        this.productSel = document.querySelector('.product-sel');
+        this.productSelMq = document.querySelector('.product-sel-mq');
     }
 
     mqToMobile() {
-        const leftbarContent = document.querySelector('.leftbar-content'),
-            navCat = document.querySelector('.nav-cat'),
-            imgSide = document.querySelector('#image-side'),
-            productSel = document.querySelector('.product-sel'),
-            prodSelMainImg = document.querySelector('.product-sel-main-img'),
-            prodSelContainer = document.createElement('div'),
-            prodSelContainerPreviousBtn = document.createElement('button'),
-            prodSelContainerPreviousImg = document.createElement('img'),
-            prodSelContainerNextBtn = document.createElement('button'),
-            prodSelContainerNextImg = document.createElement('img');
-        
-        prodSelContainerPreviousImg.setAttribute('src', './images/icon-previous.svg');
-        prodSelContainerPreviousImg.setAttribute('alt', 'Mobile leftbar previous item.');
-        prodSelContainerNextImg.setAttribute('src', './images/icon-next.svg');
-        prodSelContainerNextImg.setAttribute('alt', 'Mobile leftbar next item.');
-        
-        prodSelContainer.classList.add('prod-sel-mq');
-        prodSelContainerPreviousBtn.classList.add('prod-sel-mq-btn', 'prod-sel-mq-btn-previous');
-        prodSelContainerNextBtn.classList.add('prod-sel-mq-btn', 'prod-sel-mq-btn-next');
-
-        prodSelContainerPreviousBtn.append(prodSelContainerPreviousImg);
-        prodSelContainerNextBtn.append(prodSelContainerNextImg);
-        prodSelContainer.append(prodSelContainerPreviousBtn, prodSelMainImg, prodSelContainerNextBtn);
-        imgSide.prepend(prodSelContainer);
-        //productSel.style.display = 'none';
-
-        imgSide.prepend(productSel);
-        leftbarContent.append(navCat);
+        this.mainImgTargetMq.after(this.productSelMainImg);
+        this.leftbarContent.append(this.navCat);
+        //this.productSelMq.prepend(this.popCart);
+        this.imageSide.prepend(this.popCart);
     }
 
     mqToDesktop() {
-
+        this.productSel.append(this.productSelMainImg);
+        this.navSitelogo.after(this.navCat);
+        this.navbar.append(this.popCart);
     }
 }

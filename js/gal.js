@@ -10,6 +10,8 @@ export class Gal extends GalMq {
         this.modalBtnClk = null;
         this.cartIsClicked = false;
         this.itemInCart = false;
+        this.popCart = this.popCartCreate();
+        //this.popCart = undefined;
         //this.mediaQueryWidth = window.matchMedia("(min-width: 700px)"); // top-down approach: 'min-width' means MINIMUM display size and it triggers if viewport match not more than '700px'
         this.mediaQueryWidth = window.matchMedia('(max-width: 700px)');
         this.eventsListener();
@@ -29,7 +31,7 @@ export class Gal extends GalMq {
         const ect = e.currentTarget,
             leftbar = document.querySelector('.leftbar-content'),
             modalImgSlider = ['.modal-top-btn-previous', '.modal-top-btn-next'],            
-            leftbarImgSlider = ['.prod-sel-mq-btn-previous', '.prod-sel-mq-btn-next'];
+            leftbarImgSlider = ['.product-sel-mq-btn-previous', '.product-sel-mq-btn-next'];
         let selTg = undefined;
 
         switch(e.type) {
@@ -47,7 +49,7 @@ export class Gal extends GalMq {
                 if(ect.matches('.modal-top-btn')) {
                     this.imageSlider(ect, modalImgSlider);
                 }
-                if(ect.matches('.prod-sel-mq-btn')) {
+                if(ect.matches('.product-sel-mq-btn')) {
                     this.imageSlider(ect, leftbarImgSlider);
                 }
                 if(ect.matches('.modal-bottom-thumb-button')) {
@@ -74,27 +76,32 @@ export class Gal extends GalMq {
                 }
                 break;
             case 'load':
-                this.createCart();
                 if(this.mediaQueryWidth.matches) {
                     this.mqToMobile();
-                    this.eventsListener();
+                } else {
+                    this.mqToDesktop();
                 }
+                this.eventsListener()
                 break;
             case 'change':
                 if(this.mediaQueryWidth.matches) {
                     this.mqToMobile();
-                    this.eventsListener();
                 } else {
                     this.mqToDesktop();
-                    this.eventsListener();
                 }
+                this.eventsListener();
                 break;
         }
     }
     
-    createCart() {
-        document.querySelector('#navbar').append(this.popCartCreate());
-    }
+    /*createCart() {
+        this.popCart = this.createCart();
+        /*if(this.mediaQueryWidth.matches) {
+            document.querySelector('#navbar').append(this.popCartCreate());
+        } else {
+            document.querySelector('.product-sel-mq').prepend(this.popCartCreate());
+        }
+    }*/
 
     thumbSel(ect, selTg) {
         let imgMain = document.querySelector(selTg),
@@ -188,7 +195,7 @@ export class Gal extends GalMq {
         document.querySelector('.pop-cart-content').append(cartItemContainer);
         let tg = elem.querySelector('.pop-cart-content').lastElementChild;
         compute(tg);
-        this.eventsListener(); //It's needed to actiavate eventsListener on new cart html container
+        this.eventsListener(); //It's needed to activate eventsListener on new cart html container
     }
 
     cartRemoveItem(ect) {

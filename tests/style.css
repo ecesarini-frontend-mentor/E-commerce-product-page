@@ -75,7 +75,7 @@ main {
 .nav-menu {
     display: none;
 }
-.nav-sitelogo img {
+.nav-img img {
     max-width: 100%;
     margin-right: 30px;
 }
@@ -272,7 +272,6 @@ main {
     margin: auto 0 auto 10px;
 }
 .product-sel-mq {
-    position: relative;
     display: none;
 }
 
@@ -524,7 +523,7 @@ main {
         background-color: rgba(0, 0, 0, 0.7);
     }
 
-    .product-sel-mq > img {
+    #image-side .product-sel-mq > img {
         width: 100%;
     }
     .product-sel-mq-btn {
@@ -564,12 +563,6 @@ main {
     }
     .product-thumb {
         display: none;
-    }
-
-    .pop-cart-created {
-        top: 0%;
-        right: 0%;
-        width: 100%;
     }
     
 
