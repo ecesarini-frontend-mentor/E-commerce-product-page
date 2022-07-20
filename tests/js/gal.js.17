@@ -29,12 +29,7 @@ export class Gal extends GalMq {
     }
     handleEvent(e) {
         const ect = e.currentTarget,
-            cartIsOnMq = (this.cartIsClicked && this.mediaQueryWidth.matches)? 
-                document.querySelector('.pop-cart-created'):
-                null,
-            /*sliderMq = (this.mediaQueryWidth.matches)? 
-                document.querySelector('.leftbar-content-trans'):
-                null,*/
+            leftbar = document.querySelector('.leftbar-content'),
             modalImgSlider = ['.modal-top-btn-previous', '.modal-top-btn-next'],            
             leftbarImgSlider = ['.product-sel-mq-btn-previous', '.product-sel-mq-btn-next'];
         let selTg = undefined;
@@ -74,12 +69,9 @@ export class Gal extends GalMq {
                     this.cartRemoveItem(ect);
                 }
                 if(ect.matches('.nav-menu-btn')) {
-                    //if(sliderMq) sliderMq.classList.add('slide-on');
-                    if(cartIsOnMq) cartIsOnMq.style.display = 'none';
                     this.leftbarToggler(true);
                 }
                 if(ect.matches('.leftbar-close-btn')) {
-                    if(cartIsOnMq) cartIsOnMq.style.display = 'block';
                     this.leftbarToggler(false);
                 }
                 break;
@@ -101,6 +93,15 @@ export class Gal extends GalMq {
                 break;
         }
     }
+    
+    /*createCart() {
+        this.popCart = this.createCart();
+        /*if(this.mediaQueryWidth.matches) {
+            document.querySelector('#navbar').append(this.popCartCreate());
+        } else {
+            document.querySelector('.product-sel-mq').prepend(this.popCartCreate());
+        }
+    }*/
 
     thumbSel(ect, selTg) {
         let imgMain = document.querySelector(selTg),

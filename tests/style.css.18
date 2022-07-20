@@ -495,11 +495,15 @@ main {
         justify-content: flex-start;
         align-content: flex-start;
         background-color: var(--white);
+        /*visibility: hidden;
+        -webkit-transition: visibility 1s;
+        transition: width 1s;*/ /*check for gradual leftbar transition*/  
     }
     .leftbar-content .leftbar-close-btn {
         align-self: flex-start;
         margin: 7% 0 3% 5%;
     }
+    
     .leftbar-content .nav-cat {
         margin-left: 5%;
         width: 100%;
@@ -509,7 +513,6 @@ main {
         justify-content: space-evenly;
         align-items: flex-start;
     }
-
     .nav-cat span {
         margin-left: 0;
         color: var(--black);
@@ -562,28 +565,12 @@ main {
     .product-thumb {
         display: none;
     }
-    
+
     .pop-cart-created {
         top: 0%;
         right: 0%;
         width: 100%;
-        height: 100%;
     }
-    .pop-cart-container {
-        width: 95%;
-        height: 80%;
-        margin: 3% auto 2% auto;
-        justify-content: flex-start;
-        box-shadow: unset;
-    }
-    .pop-cart-head {
-        margin: 5% 0 5% 5%;
-    }
-    .pop-cart-content {
-        margin: auto 0;
-        overflow-y: auto;
-    }
-
     
 
     

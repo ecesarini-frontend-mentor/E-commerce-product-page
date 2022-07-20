@@ -18,6 +18,7 @@ export class GalMq extends GalTools {
     mqToMobile() {
         this.mainImgTargetMq.after(this.productSelMainImg);
         this.leftbarContent.append(this.navCat);
+        //this.productSelMq.prepend(this.popCart);
         this.imageSide.prepend(this.popCart);
     }
 

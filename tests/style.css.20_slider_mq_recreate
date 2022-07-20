@@ -488,8 +488,19 @@ main {
         height: 100%;
         z-index: 1;
     }
-    .leftbar-content {
+    .leftbar-content-trans {
+        width: 0%;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s width 2s;
+
+    }
+    .leftbar-content-trans.slide-on > .leftbar-content {
         width: 65%;
+        visibility: visible;
+        opacity: 1;
+    }
+    .leftbar-content {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
