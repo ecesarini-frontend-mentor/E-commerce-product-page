@@ -36,7 +36,7 @@ export class Gal extends GalMq {
                 document.querySelector('.leftbar-content-trans'):
                 null,*/
             modalImgSlider = ['.modal-top-btn-previous', '.modal-top-btn-next'],            
-            mqImgSlider = ['.product-sel-mq-btn-previous', '.product-sel-mq-btn-next'];
+            leftbarImgSlider = ['.product-sel-mq-btn-previous', '.product-sel-mq-btn-next'];
         let selTg = undefined;
 
         switch(e.type) {
@@ -55,7 +55,7 @@ export class Gal extends GalMq {
                     this.imageSlider(ect, modalImgSlider);
                 }
                 if(ect.matches('.product-sel-mq-btn')) {
-                    this.imageSlider(ect, mqImgSlider);
+                    this.imageSlider(ect, leftbarImgSlider);
                 }
                 if(ect.matches('.modal-bottom-thumb-button')) {
                     selTg = '.modal-top-main-img';
@@ -219,33 +219,10 @@ export class Gal extends GalMq {
 
     leftbarToggler(sel) {
         const leftbar = document.querySelector('#leftbar'),
-            leftbarContent = leftbar.firstElementChild,
-            leftbarOverlay =  leftbar.querySelector('.leftbar-overlay');
-        //    leftbarContent = leftbar.firstElementChild;
+            leftbarContent = leftbar.firstElementChild;
         
-        if(sel) {
-            leftbar.style.visibility = 'visible';
-            leftbar.style.opacity = '1';
-            leftbar.style.height = '100%';
-            leftbarContent.style.width = '65%'; 
-            leftbarContent.style.transition = 'width 0.2s ease-in';
-            //leftbarContent.style.transform = '65%';
-        } else {
-            leftbar.style.visibility = 'hidden';
-            leftbar.style.opacity = '0';
-            leftbar.style.height = '0%';
-            //leftbar.style = '';
-            leftbarContent.style.width = '';
-            //leftbarContent.style.transition = 'width 0s';
-            leftbarContent.style.transition = 'width 0s';
-            //leftbarContent.style = '';
-            /*leftbarContent.classList.add('leftbar-content-slide-off');    
-            leftbarContent.classList.remove('leftbar-content-slide-on');*/
-            //leftbarContent.style.width = '0%';
-        }
-        /*leftbar.style.opacity = (sel)? '1': '';
-        leftbar.style.height = (sel)? '100%': '';
-        leftbarContent.style.visibility = 'visible';*/
+        leftbar.style.display = (sel)? 'flex': '';
+        leftbarContent.style.visibility = 'visible';
         this.eventsListener();
     }
 
