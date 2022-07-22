@@ -56,11 +56,6 @@ main {
 }
 
 
-/* LEFTBAR */
-.leftbar-close-btn {
-    display: none;
-}
-
 /* NAVBAR */
 #navbar-container {
     width: 100%;
@@ -482,20 +477,30 @@ main {
     }
     
     #leftbar {
-        display: none;
+        /*display: none;*/
+        visibility: hidden;
+        opacity: 0;
         position: fixed;
+        display: flex;
         width: 100%;
-        height: 100%;
+        height: 0;
         z-index: 1;
     }
+    .leftbar-overlay {
+        width: 35%;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
     .leftbar-content {
-        width: 65%;
+        width: 0%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-content: flex-start;
         background-color: var(--white);
+        /*transition: width 0.2s ease-in;*/
+        /*transition: width 2s ease-in;*/
     }
+
     .leftbar-content .leftbar-close-btn {
         align-self: flex-start;
         margin: 7% 0 3% 5%;
@@ -515,10 +520,6 @@ main {
         color: var(--black);
         font-size: 1.3em;
         font-weight: 700;
-    }
-    .leftbar-overlay {
-        width: 35%;
-        background-color: rgba(0, 0, 0, 0.7);
     }
 
     .product-sel-mq > img {

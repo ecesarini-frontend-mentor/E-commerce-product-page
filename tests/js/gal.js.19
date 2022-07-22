@@ -221,6 +221,7 @@ export class Gal extends GalMq {
         const leftbar = document.querySelector('#leftbar'),
             leftbarContent = leftbar.firstElementChild,
             leftbarOverlay =  leftbar.querySelector('.leftbar-overlay');
+        //    leftbarContent = leftbar.firstElementChild;
         
         if(sel) {
             leftbar.style.visibility = 'visible';
@@ -234,17 +235,17 @@ export class Gal extends GalMq {
             leftbar.style.opacity = '0';
             leftbar.style.height = '0%';
             //leftbar.style = '';
-            leftbarContent.style.width = '0%';
+            leftbarContent.style.width = '';
             //leftbarContent.style.transition = 'width 0s';
-            leftbarContent.style.transition = 'width 0.2s';
+            leftbarContent.style.transition = 'width 0s';
             //leftbarContent.style = '';
             /*leftbarContent.classList.add('leftbar-content-slide-off');    
             leftbarContent.classList.remove('leftbar-content-slide-on');*/
             //leftbarContent.style.width = '0%';
         }
-        //leftbar.style.opacity = (sel)? '1': '';
-        //leftbar.style.height = (sel)? '100%': '';
-        //leftbarContent.style.visibility = 'visible';
+        /*leftbar.style.opacity = (sel)? '1': '';
+        leftbar.style.height = (sel)? '100%': '';
+        leftbarContent.style.visibility = 'visible';*/
         this.eventsListener();
     }
 
