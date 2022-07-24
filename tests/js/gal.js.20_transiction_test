@@ -11,6 +11,8 @@ export class Gal extends GalMq {
         this.cartIsClicked = false;
         this.itemInCart = false;
         this.popCart = this.popCartCreate();
+        //this.popCart = undefined;
+        //this.mediaQueryWidth = window.matchMedia("(min-width: 700px)"); // top-down approach: 'min-width' means MINIMUM display size and it triggers if viewport match not more than '700px'
         this.mediaQueryWidth = window.matchMedia('(max-width: 700px)');
         this.eventsListener();
     }
@@ -217,15 +219,32 @@ export class Gal extends GalMq {
 
     leftbarToggler(sel) {
         const leftbar = document.querySelector('#leftbar'),
-            leftbarContent = leftbar.firstElementChild;
+            leftbarContent = leftbar.firstElementChild,
+            leftbarOverlay =  leftbar.querySelector('.leftbar-overlay');
         
         if(sel) {
             leftbar.style.visibility = 'visible';
+            leftbar.style.opacity = '1';
+            leftbar.style.height = '100%';
             leftbarContent.style.width = '65%'; 
+            leftbarContent.style.transition = 'width 0.2s ease-in';
+            //leftbarContent.style.transform = '65%';
         } else {
-            leftbar.style.visibility = '';
-            leftbarContent.style.width = '';
+            leftbar.style.visibility = 'hidden';
+            leftbar.style.opacity = '0';
+            leftbar.style.height = '0%';
+            //leftbar.style = '';
+            leftbarContent.style.width = '0%';
+            //leftbarContent.style.transition = 'width 0s';
+            leftbarContent.style.transition = 'width 0.2s';
+            //leftbarContent.style = '';
+            /*leftbarContent.classList.add('leftbar-content-slide-off');    
+            leftbarContent.classList.remove('leftbar-content-slide-on');*/
+            //leftbarContent.style.width = '0%';
         }
+        //leftbar.style.opacity = (sel)? '1': '';
+        //leftbar.style.height = (sel)? '100%': '';
+        //leftbarContent.style.visibility = 'visible';
         this.eventsListener();
     }
 

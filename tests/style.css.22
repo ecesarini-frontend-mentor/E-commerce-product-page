@@ -41,10 +41,9 @@ html {
 } 
 body {
     box-sizing: content-box;
+    min-height: 100vh;
     max-width: var(--desktop-width);
-    /*margin: 4vh 12vw 0 12vw;*/
-    margin: 0 auto;
-    width: 70%;
+    margin: 4vh 12vw 0 12vw;
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 16px;
     background-color: var(--white); 
@@ -131,7 +130,7 @@ main {
 
 #content {
     width: 100%;
-    margin-top: 2%;
+    margin: 5% 0;
     display: flex;
 }
 
@@ -427,9 +426,6 @@ main {
     border-radius: 7px;
 }
 
-#leftbar {
-    display: none;
-}
 
 /* MEDIA QUERY */
 @media screen and (max-width: 700px) {
@@ -484,16 +480,14 @@ main {
     }
     
     #leftbar {
-        display: block;
+        /*display: none;*/
         visibility: hidden;
+        opacity: 0;
         position: fixed;
         display: flex;
         width: 100%;
-        height: 100%;
+        height: 0;
         z-index: 1;
-    }
-    #leftbar * {
-        visibility: inherit;
     }
     .leftbar-overlay {
         width: 35%;
@@ -506,7 +500,8 @@ main {
         justify-content: flex-start;
         align-content: flex-start;
         background-color: var(--white);
-        transition: visibility 0.1s linear, width 0.2s linear;
+        /*transition: width 0.2s ease-in;*/
+        /*transition: width 2s ease-in;*/
     }
 
     .leftbar-content .leftbar-close-btn {
@@ -596,14 +591,8 @@ main {
         margin: auto 0;
         overflow-y: auto;
     }
-}
-@media screen and (max-width: 500px) {
-    #desc-side {
-        width: 90%;
-        font-size: 3.5vw;
-        margin: auto;
-    }
-    .desc-par {
-        margin-top: 0;
-    }
+
+    
+
+    
 }
